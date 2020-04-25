@@ -1,0 +1,17 @@
+html {
+    font-family: 'Arial', serif;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    margin: 3em;
+    font-size: 10px;
+}
