@@ -192,17 +192,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkForMatch() {
-        let cards = document.querySelectorAll('img');
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
-
+        let cardOne = document.querySelector(`img[data-id="${optionOneId}"]`);
+        let cardTwo = document.querySelector(`img[data-id="${optionTwoId}"]`);
+        
         if (cardsChosen[0] === cardsChosen[1]) {
-            cards[optionOneId].setAttribute('src', 'img/gotcha.svg');
-            cards[optionTwoId].setAttribute('src', 'img/gotcha.svg');
+            cardOne.setAttribute('src', 'img/gotcha.svg');
+            cardTwo.setAttribute('src', 'img/gotcha.svg');
             cardsWon.push(cardsChosen);
         } else {
-            cards[optionOneId].setAttribute('src', 'img/pokebola.svg');
-            cards[optionTwoId].setAttribute('src', 'img/pokebola.svg');
+            cardOne.setAttribute('src', 'img/pokebola.svg');
+            cardTwo.setAttribute('src', 'img/pokebola.svg');
         }
 
         cardsChosen = [];
