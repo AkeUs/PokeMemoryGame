@@ -1,12 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cardsArray = [
         {
+            name: 'abra',
+            img: 'img/abra.svg'
+        },
+        {
+            name: 'bellsprout',
+            img: 'img/bellsprout.svg'
+        },
+        {
             name: 'bulbasaur',
             img: 'img/bulbasaur.svg',
         },
         {
+            name: 'caterpie',
+            img: 'img/caterpie.svg'
+        },
+        {
             name: 'charmander',
             img: 'img/charmander.svg',
+        },
+        {
+            name: 'dratini',
+            img: 'img/dratini.svg'
         },
         {
             name: 'eevee',
@@ -17,8 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'img/jigglypuff.svg',
         },
         {
+            name: 'mankey',
+            img: 'img/mankey.svg'
+        },
+        {
             name: 'meowth',
             img: 'img/meowth.svg',
+        },
+        {
+            name: 'mew',
+            img: 'img/mew.svg'
+        },
+        {
+            name: 'pidgey',
+            img: 'img/pidgey.svg'
         },
         {
             name: 'pikachu',
@@ -29,6 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'img/psyduck.svg',
         },
         {
+            name: 'ratata',
+            img: 'img/ratata.svg'
+        },
+        {
             name: 'snorlax',
             img: 'img/snorlax.svg',
         },
@@ -37,12 +69,40 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'img/squirtle.svg',
         },
         {
+            name: 'venonat',
+            img: 'img/venonat.svg'
+        },
+        {
+            name: 'weedle',
+            img: 'img/weedle.svg'
+        },
+        {
+            name: 'zubat',
+            img: 'img/zubat.svg'
+        },
+        {
+            name: 'abra',
+            img: 'img/abra.svg'
+        },
+        {
+            name: 'bellsprout',
+            img: 'img/bellsprout.svg'
+        },
+        {
             name: 'bulbasaur',
             img: 'img/bulbasaur.svg',
         },
         {
+            name: 'caterpie',
+            img: 'img/caterpie.svg'
+        },
+        {
             name: 'charmander',
             img: 'img/charmander.svg',
+        },
+        {
+            name: 'dratini',
+            img: 'img/dratini.svg'
         },
         {
             name: 'eevee',
@@ -53,8 +113,20 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'img/jigglypuff.svg',
         },
         {
+            name: 'mankey',
+            img: 'img/mankey.svg'
+        },
+        {
             name: 'meowth',
             img: 'img/meowth.svg',
+        },
+        {
+            name: 'mew',
+            img: 'img/mew.svg'
+        },
+        {
+            name: 'pidgey',
+            img: 'img/pidgey.svg'
         },
         {
             name: 'pikachu',
@@ -65,12 +137,28 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'img/psyduck.svg',
         },
         {
+            name: 'ratata',
+            img: 'img/ratata.svg'
+        },
+        {
             name: 'snorlax',
             img: 'img/snorlax.svg',
         },
         {
             name: 'squirtle',
             img: 'img/squirtle.svg',
+        },
+        {
+            name: 'venonat',
+            img: 'img/venonat.svg'
+        },
+        {
+            name: 'weedle',
+            img: 'img/weedle.svg'
+        },
+        {
+            name: 'zubat',
+            img: 'img/zubat.svg'
         }
     ];
 
@@ -99,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardsChosenId.push(cardId);
         this.setAttribute('src', cardsArray[cardId].img);
         if (cardsChosen.length === 2) {
-            setTimeout(checkForMatch, 400);
+            setTimeout(checkForMatch, 500);
         }
     }
 
@@ -123,7 +211,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (cardsWon.length === cardsArray.length / 2) {
             result.textContent = 'Congratulations! You found them all!';
+            setTimeout(playAgain, 3000);
         }
+    }
+
+    function playAgain() {
+        result.textContent = 'Play again in 3 seconds';
+        setTimeout(reload, 3000);
+    }
+
+    function reload() {
+        window.location.reload();
     }
 
     createBoard();
