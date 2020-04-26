@@ -7,5 +7,3 @@ Clásico juego de memoria echo con animaciones de Pokémon.
 Link demo: [PokeMemoryGame](https://pokememorygame.netlify.app)
 
 Hosting en [Netlify](https://netlify.com)
-
-Iconos diseñados por [Roundicons Freebies](https://www.flaticon.es/autores/roundicons-freebies)
