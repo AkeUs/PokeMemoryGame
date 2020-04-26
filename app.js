@@ -184,15 +184,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function flipCard() {
         let isBlocked = this.getAttribute('data-blocked');
+        let cardId = this.getAttribute('data-id');
 
-        if (isBlocked === 'true') {
+        if ( (isBlocked === 'true') || (cardsChosenId.length === 1 && cardsChosenId[0] === cardId) ) {
             return;
         }
 
-        let cardId = this.getAttribute('data-id');
         cardsChosen.push(cardsArray[cardId].name);
         cardsChosenId.push(cardId);
         this.setAttribute('src', cardsArray[cardId].img);
+
         if (cardsChosen.length === 2) {
             setTimeout(checkForMatch, 500);
         }
@@ -201,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkForMatch() {
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
-
+        
         let cardOne = document.querySelector(`img[data-id="${optionOneId}"]`);
         let cardTwo = document.querySelector(`img[data-id="${optionTwoId}"]`);
         
