@@ -176,12 +176,19 @@ document.addEventListener('DOMContentLoaded', () => {
             let card = document.createElement('img');
             card.setAttribute('src', 'img/pokebola.svg');
             card.setAttribute('data-id', index);
+            card.setAttribute('data-blocked', 'false');
             card.addEventListener('click', flipCard);
             grid.appendChild(card);
         }
     }
 
     function flipCard() {
+        let isBlocked = this.getAttribute('data-blocked');
+
+        if (isBlocked === 'true') {
+            return;
+        }
+
         let cardId = this.getAttribute('data-id');
         cardsChosen.push(cardsArray[cardId].name);
         cardsChosenId.push(cardId);
@@ -194,12 +201,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkForMatch() {
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
+
         let cardOne = document.querySelector(`img[data-id="${optionOneId}"]`);
         let cardTwo = document.querySelector(`img[data-id="${optionTwoId}"]`);
         
         if (cardsChosen[0] === cardsChosen[1]) {
             cardOne.setAttribute('src', 'img/gotcha.svg');
             cardTwo.setAttribute('src', 'img/gotcha.svg');
+            cardOne.setAttribute('data-blocked', 'true');
+            cardTwo.setAttribute('data-blocked', 'true');
             cardsWon.push(cardsChosen);
         } else {
             cardOne.setAttribute('src', 'img/pokebola.svg');
